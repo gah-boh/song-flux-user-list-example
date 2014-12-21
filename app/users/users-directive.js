@@ -1,10 +1,11 @@
 function usersDirective() {
 
     return {
-        scope:{},
+        scope: {},
         controller: 'UsersController',
         controllerAs: 'usersController',
-        bindToController: true
+        bindToController: true,
+        templateUrl: 'users/users.html'
     };
 
 }

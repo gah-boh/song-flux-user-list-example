@@ -11,12 +11,15 @@
   "devDependencies": {
     "exports-loader": "^0.6.2",
     "express": "^4.10.6",
+    "globby": "^1.0.0",
     "gulp": "^3.8.10",
     "gulp-util": "^3.0.1",
     "lodash": "^2.4.1",
+    "rx": "^2.3.22",
     "webpack": "^1.4.13"
   },
   "dependencies": {
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "mirrorkey": "^1.2.0"
   }
 }

@@ -1,0 +1,12 @@
+<div class="row">
+	<div class="medium-4 columns">
+		<div class="sidebar">
+			<div ng-repeat="user in usersController.users">
+				<users-list user="user" index="$index"></user-list>
+			</div>
+		</div>
+	</div>
+	<div class="medium-8 columns">
+		<user-detail></user-detail>	
+	</div>
+</div>

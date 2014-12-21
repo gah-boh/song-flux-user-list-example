@@ -1,9 +1,13 @@
 function usersListDirective() {
     return {
-        scope: {},
-        controller: 'UserListController',
-        controllerAs: 'userListController',
-        bindToController: true
+        scope: {
+            user: '=',
+            index: '='
+        },
+        controller: 'UsersListController',
+        controllerAs: 'usersListController',
+        bindToController: true,
+        templateUrl: 'users/users-list/users-list.html'
     };
 }
 
