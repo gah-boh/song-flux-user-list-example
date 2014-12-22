@@ -42,5 +42,5 @@ gulp.task('bundle-tests-watch', function() {
     });
 });
 
-gulp.task('default', ['bundle-watch']);
+gulp.task('default', ['bundle-watch', 'bundle-tests-watch']);
 

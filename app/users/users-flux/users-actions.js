@@ -11,7 +11,7 @@ function usersActions(usersConstants, songDispatcherFactory) {
         },
         saveUser: function(index, user) {
             dispatcher.dispatch({
-                actionType: usersConstants.SAVE_USER,
+                actionType: userConstants.SAVE_USER,
                 index: index,
                 user: user
             });
