@@ -3,7 +3,7 @@ function usersDirective() {
     return {
         scope: {},
         controller: UsersController,
-        controllerAs: 'usersController',
+        controllerAs: 'state',
         bindToController: true,
         templateUrl: 'users/users.html'
     };

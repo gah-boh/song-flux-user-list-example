@@ -24,7 +24,7 @@ describe('User Detail Directive', function() {
         var element = angular.element('<user-detail></user-detail>');
         $compile(element)($scope);
         $scope.$digest();
-        sut = element.isolateScope().userDetailController;
+        sut = element.isolateScope().state;
     }));
 
     describe('getUser', function() {

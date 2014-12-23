@@ -5,7 +5,7 @@ function userDetailDirective() {
         scope: {
         },
         controller: UserDetailController,
-        controllerAs: 'userDetailController',
+        controllerAs: 'state',
         bindToController: true,
         templateUrl: 'users/user-detail/user-detail.html'
     };
