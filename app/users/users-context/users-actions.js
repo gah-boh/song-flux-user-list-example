@@ -1,22 +1,20 @@
-function usersActions(usersConstants, songDispatcherFactory) {
+function usersActions(songDispatcherFactory) {
 
     var dispatcher = songDispatcherFactory.getDispatcher('users');
 
+    function ShowUser(index) {
+        this.index = index;
+        dispatcher.dispatch(this);
+    }
+    function SaveUser(index, user) {
+        this.index = index;
+        this.user = user;
+        dispatcher.dispatch(this);
+    }
+
     return {
-        showUser: function(index) {
-            dispatcher.dispatch({
-                actionType: usersConstants.SHOW_USER,
-                index: index
-            });
-        },
-        saveUser: function(index, user) {
-            dispatcher.dispatch({
-                actionType: usersConstants.SAVE_USER,
-                index: index,
-                user: user
-            });
-        },
-        deleteUser: function() {},
+        ShowUser: ShowUser,
+        SaveUser: SaveUser
     };
 
 }

@@ -16,7 +16,7 @@ function UsersListController(usersActions) {
 }
 
 UsersListController.prototype.userSelected = function() {
-    this.usersActions.showUser(this.index);
+    new this.usersActions.ShowUser(this.index);
 };
 
 

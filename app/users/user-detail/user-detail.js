@@ -1,9 +1,9 @@
 var angular = require('angular');
-var usersFlux = require('../users-flux/users-flux');
+var usersContext = require('../users-context/users-context');
 
 var userDetailDirective = require('./user-detail-directive');
 
-var userDetail = angular.module('userDetail', [usersFlux.name]);
+var userDetail = angular.module('userDetail', [usersContext.name]);
 
 userDetail.directive('userDetail', userDetailDirective);
 

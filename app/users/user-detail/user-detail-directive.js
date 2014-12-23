@@ -32,7 +32,7 @@ UserDetailController.prototype.getUser = function() {
 };
 
 UserDetailController.prototype.saveUser = function() {
-    this.usersActions.saveUser(this.index, this.user);
+    new this.usersActions.SaveUser(this.index, this.user);
 };
 
 module.exports = userDetailDirective;
