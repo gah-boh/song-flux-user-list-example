@@ -1,15 +1,14 @@
-function usersActions(songDispatcherFactory) {
+var angular = require('angular');
 
-    var dispatcher = songDispatcherFactory.getDispatcher('users');
+function usersActions() {
 
     function ShowUser(index) {
         this.index = index;
-        dispatcher.dispatch(this);
     }
+
     function SaveUser(index, user) {
         this.index = index;
         this.user = user;
-        dispatcher.dispatch(this);
     }
 
     return {

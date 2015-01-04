@@ -11,12 +11,12 @@ function usersListDirective() {
     };
 }
 
-function UsersListController(usersActions) {
-    this.usersActions = usersActions;
+function UsersListController(songFactory, usersActions) {
+    this.showUserActionFactory = songFactory.createAction(usersActions.ShowUser, 'users');
 }
 
 UsersListController.prototype.userSelected = function() {
-    new this.usersActions.ShowUser(this.index);
+    this.showUserActionFactory(this.index).dispatch();
 };
 
 

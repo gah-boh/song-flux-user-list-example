@@ -12,9 +12,9 @@ function userDetailDirective() {
 
 }
 
-function UserDetailController(usersStore, usersActions, $scope) {
+function UserDetailController(usersStore, usersActions, songFactory, $scope) {
     this.usersStore = usersStore;
-    this.usersActions = usersActions;
+    this.saveAction = songFactory.createAction(usersActions.SaveUser, 'users');
     this.user = null;
 
     this.getUser();
@@ -32,7 +32,7 @@ UserDetailController.prototype.getUser = function() {
 };
 
 UserDetailController.prototype.saveUser = function() {
-    new this.usersActions.SaveUser(this.index, this.user);
+    this.saveAction(this.index, this.user).dispatch();
 };
 
 module.exports = userDetailDirective;

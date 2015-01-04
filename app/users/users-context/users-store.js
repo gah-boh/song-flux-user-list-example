@@ -3,8 +3,8 @@ var EventEmitter = require('events').EventEmitter;
 
 var CHANGE_EVENT = 'change';
 
-function userStore(songDispatcherFactory, usersActions) {
-    var dispatcher = songDispatcherFactory.getDispatcher('users');
+function userStore(songFactory, usersActions) {
+    var dispatcher = songFactory.getDispatcher('users');
     var eventEmitter = new EventEmitter();
 
     var usersList = [
