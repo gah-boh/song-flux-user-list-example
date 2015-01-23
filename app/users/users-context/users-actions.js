@@ -6,8 +6,7 @@ function usersActions() {
         this.index = index;
     }
 
-    function SaveUser(index, user) {
-        this.index = index;
+    function SaveUser(user) {
         this.user = user;
     }
 

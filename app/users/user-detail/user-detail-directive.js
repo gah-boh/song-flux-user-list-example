@@ -5,7 +5,7 @@ function userDetailDirective() {
         scope: {
         },
         controller: UserDetailController,
-        controllerAs: 'state',
+        controllerAs: 'userDetailController',
         bindToController: true,
         templateUrl: 'users/user-detail/user-detail.html'
     };
@@ -32,7 +32,7 @@ UserDetailController.prototype.getUser = function() {
 };
 
 UserDetailController.prototype.saveUser = function() {
-    this.saveAction(this.index, this.user).dispatch();
+    this.saveAction(this.user).dispatch();
 };
 
 module.exports = userDetailDirective;

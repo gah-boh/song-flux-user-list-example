@@ -7,14 +7,18 @@ function userStore(songFactory, usersActions) {
     var dispatcher = songFactory.getDispatcher('users');
     var eventEmitter = new EventEmitter();
 
-    var usersList = [
-        {
-            name: 'John Doe'
-        },
-        {
-            name: 'Jane Doe'
-        }
-    ];
+    var usersList = [{
+        name: 'John Doe',
+        gender: 'm'
+    },
+    {
+        name: 'Jane Doe',
+        gender: 'f'
+    },
+    {
+        name: 'Katie Cat',
+        gender: 'f'
+    }];
     var currentUserIndex;
 
     function userSelected(payload) {
@@ -24,7 +28,6 @@ function userStore(songFactory, usersActions) {
 
     function saveUser(payload) {
         var user = payload.user;
-        var index = payload.index;
         usersList[currentUserIndex] = user;
         eventEmitter.emit(CHANGE_EVENT);
     }
