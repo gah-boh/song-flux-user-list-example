@@ -7,6 +7,8 @@ var globby = require('globby');
 var minimist = require('minimist');
 var notify = require('gulp-notify');
 var nn = require('node-notifier');
+var karma = require('karma').server;
+var path = require('path');
 
 gulp.task('bundle', function(cb) {
     webpack(webpackConfig, function(err, stats) {
@@ -16,8 +18,11 @@ gulp.task('bundle', function(cb) {
     });
 });
 
+function isGrowl() {
+    return minimist(process.argv.slice(2)).notify === 'growl';
+}
 function getNotifier() {
-    if(minimist(process.argv.slice(2)).notify === 'growl') {
+    if(isGrowl()) {
         return new nn.Growl({name: 'Gulp'});
     }
     return nn;
@@ -55,6 +60,21 @@ gulp.task('bundle-tests-watch', function() {
     customConfig.entry = testFiles;
     customConfig.output.filename = 'bundle_test.js';
     webpackWatch(customConfig);
+});
+
+gulp.task('tdd', ['default'], function() {
+    var reporters = ['progress'];
+    if (isGrowl()) {
+        reporters.push('growl');
+    }
+    karma.start({
+        configFile: path.join(__dirname, 'karma.conf.js'),
+        reporters: reporters
+    });
+});
+
+gulp.task('dev', ['default', 'tdd'], function() {
+    require('./serve.js');
 });
 
 gulp.task('default', ['bundle-watch', 'bundle-tests-watch']);
