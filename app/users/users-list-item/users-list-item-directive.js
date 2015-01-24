@@ -7,7 +7,7 @@ function usersListDirective() {
         controller: UsersListController,
         controllerAs: 'state',
         bindToController: true,
-        templateUrl: 'users/users-list/users-list.html'
+        templateUrl: 'users/users-list-item/users-list-item.html'
     };
 }
 

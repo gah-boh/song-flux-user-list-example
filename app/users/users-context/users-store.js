@@ -32,12 +32,25 @@ function userStore(songFactory, usersActions) {
         eventEmitter.emit(CHANGE_EVENT);
     }
 
+    function addUser() {
+        var newUser = {
+            name: 'New User',
+            gender: ''
+        };
+        usersList.push(newUser);
+        currentUserIndex = usersList.length - 1;
+        eventEmitter.emit(CHANGE_EVENT);
+    }
+
     var dispatcherIndices = {
         showUser: dispatcher.register(usersActions.ShowUser, function(payload) {
             userSelected(payload);
         }),
         saveUser: dispatcher.register(usersActions.SaveUser, function(payload) {
             saveUser(payload);
+        }),
+        addUser: dispatcher.register(usersActions.AddUser, function() {
+            addUser();
         })
     };
 

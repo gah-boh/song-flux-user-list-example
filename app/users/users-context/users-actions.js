@@ -10,9 +10,13 @@ function usersActions() {
         this.user = user;
     }
 
+    function AddUser() {
+    }
+
     return {
         ShowUser: ShowUser,
-        SaveUser: SaveUser
+        SaveUser: SaveUser,
+        AddUser: AddUser,
     };
 
 }

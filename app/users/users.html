@@ -1,8 +1,11 @@
 <div class="row">
 	<div class="medium-4 columns">
 		<div class="sidebar">
-			<div ng-repeat="user in state.users">
-				<users-list user="user" index="$index"></user-list>
+			<div ng-repeat="user in usersController.users">
+				<users-list-item user="user" index="$index"></user-list-item>
+			</div>
+			<div>
+				<button class="tiny" ng-click="usersController.addUser()">Add User</button>
 			</div>
 		</div>
 	</div>
