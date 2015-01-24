@@ -13,7 +13,8 @@ function usersActions() {
     function AddUser() {
     }
 
-    function DeleteUser() {
+    function DeleteUser(index) {
+        this.index = index;
     }
 
     return {
