@@ -42,6 +42,11 @@ function userStore(songFactory, usersActions) {
         eventEmitter.emit(CHANGE_EVENT);
     }
 
+    function deleteUser(payload) {
+        usersList.splice(payload.index, 1);
+        eventEmitter.emit(CHANGE_EVENT);
+    }
+
     var dispatcherIndices = {
         showUser: dispatcher.register(usersActions.ShowUser, function(payload) {
             userSelected(payload);
@@ -51,6 +56,9 @@ function userStore(songFactory, usersActions) {
         }),
         addUser: dispatcher.register(usersActions.AddUser, function() {
             addUser();
+        }),
+        deleteUser: dispatcher.register(usersActions.DeleteUser, function(payload) {
+            deleteUser(payload);
         })
     };
 

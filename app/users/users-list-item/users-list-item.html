@@ -1,3 +1,6 @@
-<div ng-click="state.userSelected()">
-	{{state.user.name}}
+<div>
+	<span ng-click="userListItemController.userSelected()">
+		{{userListItemController.user.name}}
+	</span>
+	<button class="tiny" ng-click="userListItemController.deleteUser()">x</button>
 </div>

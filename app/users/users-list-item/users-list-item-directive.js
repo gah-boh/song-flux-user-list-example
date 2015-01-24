@@ -4,19 +4,24 @@ function usersListDirective() {
             user: '=',
             index: '='
         },
-        controller: UsersListController,
-        controllerAs: 'state',
+        controller: UserListItemController,
+        controllerAs: 'userListItemController',
         bindToController: true,
         templateUrl: 'users/users-list-item/users-list-item.html'
     };
 }
 
-function UsersListController(songFactory, usersActions) {
+function UserListItemController(songFactory, usersActions) {
     this.showUserActionFactory = songFactory.createAction(usersActions.ShowUser, 'users');
+    this.deleteUserAction = songFactory.createAction(usersActions.DeleteUser, 'users');
 }
 
-UsersListController.prototype.userSelected = function() {
+UserListItemController.prototype.userSelected = function() {
     this.showUserActionFactory(this.index).dispatch();
+};
+
+UserListItemController.prototype.deleteUser = function() {
+    this.deleteUserAction(this.index).dispatch();
 };
 
 

@@ -13,10 +13,14 @@ function usersActions() {
     function AddUser() {
     }
 
+    function DeleteUser() {
+    }
+
     return {
         ShowUser: ShowUser,
         SaveUser: SaveUser,
         AddUser: AddUser,
+        DeleteUser: DeleteUser
     };
 
 }
